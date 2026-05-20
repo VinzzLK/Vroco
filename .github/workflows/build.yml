@@ -27,9 +27,39 @@ jobs:
             -O /usr/local/bin/apktool
           chmod +x /usr/local/bin/apktool
 
+      - name: Validate Manifest Package Name
+        run: |
+          PKG=$(grep -o 'package="[^"]*"' AndroidManifest.xml | head -1)
+          echo "=== PACKAGE NAME CHECK ==="
+          echo "Found: $PKG"
+          if echo "$PKG" | grep -q "com.vroco.launcher"; then
+            echo "✅ Package name correct"
+          else
+            echo "❌ WRONG PACKAGE NAME — still using old package!"
+            echo "Expected: package=\"com.vroco.launcher\""
+            echo "Got: $PKG"
+            exit 1
+          fi
+          echo ""
+          echo "=== SHARED USER ID CHECK ==="
+          if grep -q "sharedUserId" AndroidManifest.xml; then
+            echo "❌ sharedUserId still present — will cause install failure as user app"
+            grep "sharedUserId" AndroidManifest.xml
+            exit 1
+          else
+            echo "✅ sharedUserId removed"
+          fi
+
       - name: Build APK
         run: |
-          apktool b . -o VrocoLauncher-unsigned.apk --use-aapt2
+          echo "=== APKTOOL BUILD ==="
+          apktool b . -o VrocoLauncher-unsigned.apk --use-aapt2 2>&1 | tee build.log
+          echo ""
+          echo "=== BUILD WARNINGS ==="
+          grep -i "warn\|error\|fail" build.log || echo "No warnings/errors"
+          echo ""
+          echo "=== APK SIZE ==="
+          ls -lh VrocoLauncher-unsigned.apk
 
       - name: Generate debug keystore
         run: |
@@ -43,6 +73,7 @@ jobs:
       - name: Sign APK
         run: |
           BUILD_TOOLS=$(ls $ANDROID_SDK_ROOT/build-tools | sort -V | tail -1)
+          echo "=== SIGNING WITH BUILD TOOLS: $BUILD_TOOLS ==="
           $ANDROID_SDK_ROOT/build-tools/$BUILD_TOOLS/apksigner sign \
             --ks vroco.jks \
             --ks-pass pass:vrocosign \
@@ -50,12 +81,21 @@ jobs:
             --ks-key-alias vroco \
             --out VrocoLauncher.apk \
             VrocoLauncher-unsigned.apk
+          echo "✅ Sign complete"
 
       - name: Verify APK
         run: |
           BUILD_TOOLS=$(ls $ANDROID_SDK_ROOT/build-tools | sort -V | tail -1)
+          echo "=== APK VERIFICATION ==="
           $ANDROID_SDK_ROOT/build-tools/$BUILD_TOOLS/apksigner verify \
             --verbose VrocoLauncher.apk
+          echo ""
+          echo "=== APK PACKAGE INFO (aapt) ==="
+          $ANDROID_SDK_ROOT/build-tools/$BUILD_TOOLS/aapt dump badging VrocoLauncher.apk \
+            | grep -E "package|sdkVersion|uses-permission:.*INSTALL|launchable"
+          echo ""
+          echo "=== FINAL APK SIZE ==="
+          ls -lh VrocoLauncher.apk
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
@@ -63,3 +103,11 @@ jobs:
           name: VrocoLauncher-${{ github.run_number }}
           path: VrocoLauncher.apk
           retention-days: 30
+
+      - name: Upload build log (on failure)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-log-${{ github.run_number }}
+          path: build.log
+          retention-days: 7
