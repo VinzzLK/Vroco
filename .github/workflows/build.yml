@@ -1,0 +1,65 @@
+name: Build VrocoLauncher
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Install apktool
+        run: |
+          wget -q https://github.com/iBotPeaches/Apktool/releases/download/v2.9.3/apktool_2.9.3.jar \
+            -O /usr/local/bin/apktool.jar
+          wget -q https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool \
+            -O /usr/local/bin/apktool
+          chmod +x /usr/local/bin/apktool
+
+      - name: Build APK
+        run: |
+          apktool b . -o VrocoLauncher-unsigned.apk --use-aapt2
+
+      - name: Generate debug keystore
+        run: |
+          keytool -genkeypair -v \
+            -keystore vroco.jks \
+            -alias vroco \
+            -keyalg RSA -keysize 2048 -validity 10000 \
+            -storepass vrocosign -keypass vrocosign \
+            -dname "CN=Vroco, O=VrocoLauncher, C=US"
+
+      - name: Sign APK
+        run: |
+          BUILD_TOOLS=$(ls $ANDROID_SDK_ROOT/build-tools | sort -V | tail -1)
+          $ANDROID_SDK_ROOT/build-tools/$BUILD_TOOLS/apksigner sign \
+            --ks vroco.jks \
+            --ks-pass pass:vrocosign \
+            --key-pass pass:vrocosign \
+            --ks-key-alias vroco \
+            --out VrocoLauncher.apk \
+            VrocoLauncher-unsigned.apk
+
+      - name: Verify APK
+        run: |
+          BUILD_TOOLS=$(ls $ANDROID_SDK_ROOT/build-tools | sort -V | tail -1)
+          $ANDROID_SDK_ROOT/build-tools/$BUILD_TOOLS/apksigner verify \
+            --verbose VrocoLauncher.apk
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: VrocoLauncher-${{ github.run_number }}
+          path: VrocoLauncher.apk
+          retention-days: 30
