@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:paddingTop="@dimen/dp10" android:paddingBottom="@dimen/dp24" android:layout_width="fill_parent" android:layout_height="wrap_content" android:measureWithLargestChild="true" android:showDividers="none" android:paddingStart="@dimen/dp20" android:paddingEnd="@dimen/dp20" style="?android:buttonBarStyle"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:layout_gravity="left" android:id="@id/footerLeftButton" android:layout_width="0.0dip" android:layout_height="@dimen/dp48" android:maxLines="2" android:layout_weight="1.0" android:layout_marginStart="@dimen/dp7" android:layout_marginEnd="@dimen/dp7" style="@style/BottomBarButton" />
+    <Button android:layout_gravity="right" android:id="@id/footerRightButton" android:layout_width="0.0dip" android:layout_height="@dimen/dp48" android:maxLines="2" android:layout_weight="1.0" android:layout_marginStart="@dimen/dp7" android:layout_marginEnd="@dimen/dp7" style="@style/BottomBarButton" />
+</LinearLayout>

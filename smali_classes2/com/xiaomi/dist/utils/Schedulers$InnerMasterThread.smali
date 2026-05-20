@@ -1,0 +1,196 @@
+.class Lcom/xiaomi/dist/utils/Schedulers$InnerMasterThread;
+.super Ljava/lang/Object;
+.source "Schedulers.java"
+
+# interfaces
+.implements Lcom/xiaomi/dist/utils/Schedulers$MasterThread;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/xiaomi/dist/utils/Schedulers;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x8
+    name = "InnerMasterThread"
+.end annotation
+
+
+# instance fields
+.field private final mExecutor:Ljava/util/concurrent/Executor;
+
+.field private final mHandler:Landroid/os/Handler;
+
+.field private final mHandlerThread:Landroid/os/HandlerThread;
+
+.field private final mName:Ljava/lang/String;
+
+
+# direct methods
+.method public static synthetic $r8$lambda$XXe13ssZpE3ZTLYUD0PRko9v1ZM(Lcom/xiaomi/dist/utils/Schedulers$InnerMasterThread;Ljava/lang/Runnable;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/xiaomi/dist/utils/Schedulers$InnerMasterThread;->lambda$new$0(Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method constructor <init>(Ljava/lang/String;Landroid/os/Handler$Callback;)V
+    .locals 2
+
+    .line 177
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 178
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "t-"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, "-"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/xiaomi/dist/utils/Schedulers$InnerMasterThread;->mName:Ljava/lang/String;
+
+    .line 179
+    new-instance v0, Landroid/os/HandlerThread;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p1, v1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;I)V
+
+    iput-object v0, p0, Lcom/xiaomi/dist/utils/Schedulers$InnerMasterThread;->mHandlerThread:Landroid/os/HandlerThread;
+
+    .line 180
+    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
+
+    .line 181
+    new-instance p1, Landroid/os/Handler;
+
+    invoke-virtual {v0}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
+
+    iput-object p1, p0, Lcom/xiaomi/dist/utils/Schedulers$InnerMasterThread;->mHandler:Landroid/os/Handler;
+
+    .line 182
+    new-instance p1, Lcom/xiaomi/dist/utils/Schedulers$InnerMasterThread$$ExternalSyntheticLambda0;
+
+    invoke-direct {p1, p0}, Lcom/xiaomi/dist/utils/Schedulers$InnerMasterThread$$ExternalSyntheticLambda0;-><init>(Lcom/xiaomi/dist/utils/Schedulers$InnerMasterThread;)V
+
+    iput-object p1, p0, Lcom/xiaomi/dist/utils/Schedulers$InnerMasterThread;->mExecutor:Ljava/util/concurrent/Executor;
+
+    return-void
+.end method
+
+.method private synthetic lambda$new$0(Ljava/lang/Runnable;)V
+    .locals 4
+
+    .line 183
+    iget-object v0, p0, Lcom/xiaomi/dist/utils/Schedulers$InnerMasterThread;->mHandlerThread:Landroid/os/HandlerThread;
+
+    invoke-virtual {v0}, Landroid/os/HandlerThread;->isAlive()Z
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    const-string v3, "Schedulers"
+
+    if-nez v0, :cond_0
+
+    .line 184
+    new-instance p1, Ljava/lang/Throwable;
+
+    invoke-direct {p1}, Ljava/lang/Throwable;-><init>()V
+
+    new-array v0, v2, [Ljava/lang/Object;
+
+    iget-object p0, p0, Lcom/xiaomi/dist/utils/Schedulers$InnerMasterThread;->mName:Ljava/lang/String;
+
+    aput-object p0, v0, v1
+
+    const-string p0, "already closed! thread : %s"
+
+    invoke-static {v3, p1, p0, v0}, Lcom/xiaomi/dist/utils/Log;->e(Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    return-void
+
+    :cond_0
+    new-array v0, v2, [Ljava/lang/Object;
+
+    .line 187
+    iget-object v2, p0, Lcom/xiaomi/dist/utils/Schedulers$InnerMasterThread;->mName:Ljava/lang/String;
+
+    aput-object v2, v0, v1
+
+    const-string v1, "post task in %s"
+
+    invoke-static {v3, v1, v0}, Lcom/xiaomi/dist/utils/Log;->v(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 188
+    iget-object p0, p0, Lcom/xiaomi/dist/utils/Schedulers$InnerMasterThread;->mHandler:Landroid/os/Handler;
+
+    invoke-virtual {p0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public asExecutor()Ljava/util/concurrent/Executor;
+    .locals 0
+
+    .line 199
+    iget-object p0, p0, Lcom/xiaomi/dist/utils/Schedulers$InnerMasterThread;->mExecutor:Ljava/util/concurrent/Executor;
+
+    return-object p0
+.end method
+
+.method public asHandler()Landroid/os/Handler;
+    .locals 0
+
+    .line 194
+    iget-object p0, p0, Lcom/xiaomi/dist/utils/Schedulers$InnerMasterThread;->mHandler:Landroid/os/Handler;
+
+    return-object p0
+.end method
+
+.method public close()V
+    .locals 2
+
+    .line 204
+    iget-object v0, p0, Lcom/xiaomi/dist/utils/Schedulers$InnerMasterThread;->mHandler:Landroid/os/Handler;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
+
+    .line 205
+    iget-object p0, p0, Lcom/xiaomi/dist/utils/Schedulers$InnerMasterThread;->mHandlerThread:Landroid/os/HandlerThread;
+
+    invoke-virtual {p0}, Landroid/os/HandlerThread;->quit()Z
+
+    return-void
+.end method

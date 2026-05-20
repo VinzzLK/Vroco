@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.miui.home.launcher.maml.MaMlWidgetView android:longClickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:importantForAccessibility="yes" app:displayTitle="false"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.miui.home.launcher.LauncherWidgetContainerView android:layout_gravity="center" android:id="@id/widget_container" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerHorizontal="true" app:setupLayoutParams="false" />
+    <include android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/widget_container" android:layout_centerHorizontal="true" layout="@layout/icon_title" />
+</com.miui.home.launcher.maml.MaMlWidgetView>

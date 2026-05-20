@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:background="@drawable/common_dialog_background" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/text_size_sp16" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp37" android:layout_marginTop="@dimen/dp30" android:layout_marginRight="@dimen/dp37" android:text="@string/fingerprint_identify_msg" android:fontFamily="sans-serif" style="@style/common_dialog_title" />
+        <TextView android:textSize="@dimen/text_size_sp14" android:layout_gravity="center_horizontal" android:id="@id/confirm_fingerprint_view_msg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp37" android:layout_marginTop="10.0dip" android:layout_marginRight="@dimen/dp37" android:text="@string/confirm_fingerprint_msg" style="@style/common_dialog_content" />
+        <ImageView android:layout_gravity="center_horizontal" android:id="@id/confirm_fingerprint_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp20" android:layout_marginBottom="@dimen/dp30" android:src="@drawable/confirm_fingerprint_img" />
+        <TextView android:gravity="center" android:id="@id/btn_cancel" android:layout_width="fill_parent" android:layout_height="@dimen/dp48" android:layout_marginTop="@dimen/dp14" android:layout_marginBottom="@dimen/dp24" android:text="@string/btn_cancel" android:layout_marginStart="@dimen/dp28" android:layout_marginEnd="@dimen/dp28" style="@style/common_dialog_positive_btn" />
+    </LinearLayout>
+</LinearLayout>

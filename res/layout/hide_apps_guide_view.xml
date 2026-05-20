@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.miui.home.launcher.allapps.hideapps.HideAppsGuideView android:orientation="vertical" android:background="@color/hide_apps_guide_bg" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="top" android:orientation="vertical" android:id="@id/container" android:background="@drawable/drawer_guide_dialog_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/all_apps_header_padding_top">
+        <TextView android:gravity="start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp20" android:text="@string/hide_apps_guide_dialog_content" android:layout_marginStart="@dimen/dp24" android:layout_marginEnd="@dimen/dp24" style="@style/drawer_guide_view_content_text" />
+        <TextView android:layout_gravity="end" android:id="@id/hide_apps_guide_back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp16" android:layout_marginBottom="@dimen/dp16" android:text="@string/drawer_guide_certain_btn" android:layout_marginEnd="@dimen/dp20" style="@style/drawer_guide_view_certain_text" />
+    </LinearLayout>
+    <ImageView android:layout_gravity="bottom|center|left" android:id="@id/hide_apps_guide_img" android:layout_width="@dimen/dp72" android:layout_height="@dimen/dp72" android:layout_marginLeft="@dimen/dp96" android:layout_marginBottom="@dimen/dp264" />
+</com.miui.home.launcher.allapps.hideapps.HideAppsGuideView>

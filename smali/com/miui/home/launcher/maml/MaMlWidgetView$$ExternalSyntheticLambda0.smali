@@ -1,0 +1,34 @@
+.class public final synthetic Lcom/miui/home/launcher/maml/MaMlWidgetView$$ExternalSyntheticLambda0;
+.super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic f$0:Lcom/miui/home/launcher/maml/MaMlWidgetView;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lcom/miui/home/launcher/maml/MaMlWidgetView;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/miui/home/launcher/maml/MaMlWidgetView$$ExternalSyntheticLambda0;->f$0:Lcom/miui/home/launcher/maml/MaMlWidgetView;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
+    .locals 0
+
+    iget-object p0, p0, Lcom/miui/home/launcher/maml/MaMlWidgetView$$ExternalSyntheticLambda0;->f$0:Lcom/miui/home/launcher/maml/MaMlWidgetView;
+
+    invoke-static {p0}, Lcom/miui/home/launcher/maml/MaMlWidgetView;->$r8$lambda$DqfY0euQTiLmHw9dAeYDzRIAMEA(Lcom/miui/home/launcher/maml/MaMlWidgetView;)V
+
+    return-void
+.end method

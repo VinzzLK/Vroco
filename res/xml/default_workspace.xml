@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<favorites xmlns:launcher="http://schemas.android.com/apk/res-auto">
+    <default launcher:screen="1" />
+    <folder_2x2_9 launcher:screen="1" launcher:spanX="2" launcher:spanY="2" launcher:title="@string/new_default_folder_title_tools_path" launcher:x="0" launcher:y="0" />
+    <folder launcher:presets_container="true" launcher:screen="1" launcher:title="@string/default_folder_title_hot_path" launcher:x="0" launcher:y="2" />
+    <folder launcher:presets_container="true" launcher:screen="1" launcher:title="@string/default_folder_title_recommend_path" launcher:x="1" launcher:y="2" />
+    <command launcher:methodName="isRedmiSeries" launcher:methodResult="false">
+        <maml launcher:itemFlags="160" launcher:pickerId="ma_0216952801892370215809" launcher:productId="52b8238d-848f-4608-a0e6-28458d4b1f2c" launcher:screen="0" launcher:spanX="4" launcher:spanY="2" launcher:title="@string/gadget_clock_label" launcher:uri="file:///system/media/theme/default/maml/maml_clock_4x2_v3.mtz" launcher:versionCode="12" launcher:x="0" launcher:y="0" />
+    </command>
+    <command launcher:methodName="isRedmiSeries" launcher:methodResult="true">
+        <maml launcher:itemFlags="160" launcher:pickerId="ma_0217285418342680200060" launcher:productId="2353f0c3-6c7c-4404-8a5d-27d4a679c55c" launcher:screen="0" launcher:spanX="4" launcher:spanY="2" launcher:title="@string/gadget_clock_label" launcher:uri="file:///system/media/theme/default/maml/maml_clock_4x2_redmi.mtz" launcher:versionCode="1" launcher:x="0" launcher:y="0" />
+    </command>
+    <command launcher:methodName="isWestCoast" launcher:methodResult="false">
+        <maml launcher:itemFlags="160" launcher:packageName="com.miui.weather2" launcher:pickerId="ma_0220210813165003011950" launcher:productId="b8006e83-c497-4642-9815-f674b82842b0" launcher:screen="0" launcher:spanX="2" launcher:spanY="2" launcher:title="@string/gadget_weather_title" launcher:uri="file:///system/media/theme/default/maml/maml_weather_2x2_new.mtz" launcher:versionCode="1" launcher:x="0" launcher:y="-3" />
+    </command>
+    <command launcher:methodName="isWestCoast" launcher:methodResult="true">
+        <maml launcher:itemFlags="160" launcher:packageName="com.miui.weather2" launcher:pickerId="ma_0216950188744740106793" launcher:productId="87995bdc-d5ec-408b-9fea-a6602e403a7d" launcher:screen="0" launcher:spanX="2" launcher:spanY="2" launcher:title="" launcher:uri="file:///system/product/media/theme/default/maml/Real_time_weather.mtz" launcher:versionCode="100" launcher:x="0" launcher:y="-3" />
+    </command>
+    <favorite launcher:className="com.miui.gallery.activity.HomePageActivity" launcher:packageName="com.miui.gallery" launcher:screen="0" launcher:x="2" launcher:y="-3" />
+    <favorite launcher:className="com.android.calendar.homepage.AllInOneActivity" launcher:packageName="com.android.calendar" launcher:screen="0" launcher:x="3" launcher:y="-3" />
+    <favorite launcher:className="com.miui.calculator.cal.CalculatorActivity" launcher:packageName="com.miui.calculator" launcher:screen="0" launcher:x="2" launcher:y="-2" />
+    <favorite launcher:className="com.android.settings.MiuiSettings" launcher:packageName="com.android.settings" launcher:screen="0" launcher:x="3" launcher:y="-2" />
+    <favorite launcher:className="com.android.settings.MainSettings" launcher:packageName="com.android.settings" launcher:screen="0" launcher:x="3" launcher:y="-2" />
+    <favorite launcher:className="com.xiaomi.shop.activity.MainTabActivity" launcher:packageName="com.xiaomi.shop" launcher:screen="0" launcher:x="0" launcher:y="-1" />
+    <favorite launcher:className="com.xiaomi.gamecenter.ui.MainTabActivity" launcher:packageName="com.xiaomi.gamecenter" launcher:screen="0" launcher:x="1" launcher:y="-1" />
+    <favorite launcher:className="com.xiaomi.market.ui.MarketTabActivity" launcher:packageName="com.xiaomi.market" launcher:screen="0" launcher:x="2" launcher:y="-1" />
+    <favorite launcher:className="com.miui.securitymain.SCMainEntryActivity" launcher:packageName="com.miui.securitymanager" launcher:screen="0" launcher:x="3" launcher:y="-1" />
+    <favorite launcher:className="com.miui.securityscan.MainActivity" launcher:packageName="com.miui.securitycenter" launcher:screen="0" launcher:x="3" launcher:y="-1" />
+    <command launcher:methodName="checkHideApp" launcher:methodParams="com.miui.securitycenter/com.miui.securityscan.MainActivity" launcher:methodResult="true">
+        <favorite launcher:className="com.android.soundrecorder.RecordPreviewActivity" launcher:packageName="com.android.soundrecorder" launcher:screen="0" launcher:x="3" launcher:y="-1" />
+    </command>
+    <command launcher:methodName="checkHideApp" launcher:methodParams="com.miui.securitycenter/com.miui.securityscan.MainActivity" launcher:methodResult="false">
+        <favorite launcher:className="com.android.soundrecorder.RecordPreviewActivity" launcher:container="1" launcher:packageName="com.android.soundrecorder" launcher:x="11" launcher:y="0" />
+    </command>
+    <favorite launcher:className="com.android.deskclock.DeskClockTabActivity" launcher:packageName="com.android.deskclock" launcher:screen="1" launcher:x="2" launcher:y="0" />
+    <favorite launcher:className="com.miui.notes.ui.NotesListActivity" launcher:packageName="com.miui.notes" launcher:screen="1" launcher:x="3" launcher:y="0" />
+    <favorite launcher:className="com.miui.video.HomeActivity" launcher:packageName="com.miui.video" launcher:screen="1" launcher:x="2" launcher:y="1" />
+    <favorite launcher:className="com.xiaomi.smarthome.SmartHomeMainActivity" launcher:packageName="com.xiaomi.smarthome" launcher:screen="1" launcher:x="3" launcher:y="1" />
+    <include layout="@xml/layout_folder_recommend" />
+    <include layout="@xml/layout_folder_tools" />
+    <include layout="@xml/layout_hotseats" />
+</favorites>

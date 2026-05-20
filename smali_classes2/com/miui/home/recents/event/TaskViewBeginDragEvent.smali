@@ -1,0 +1,34 @@
+.class public final Lcom/miui/home/recents/event/TaskViewBeginDragEvent;
+.super Lcom/miui/home/recents/event/Event;
+.source "TaskViewBeginDragEvent.kt"
+
+
+# instance fields
+.field private type:I
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    .line 7
+    invoke-direct {p0}, Lcom/miui/home/recents/event/Event;-><init>()V
+
+    const/16 v0, 0x1b61
+
+    .line 8
+    iput v0, p0, Lcom/miui/home/recents/event/TaskViewBeginDragEvent;->type:I
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public getType()I
+    .locals 0
+
+    .line 8
+    iget p0, p0, Lcom/miui/home/recents/event/TaskViewBeginDragEvent;->type:I
+
+    return p0
+.end method

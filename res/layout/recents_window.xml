@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.miui.home.launcher.RecentsWindowFrameLayout android:id="@id/recents_window" android:visibility="gone" android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:forceHasOverlappingRendering="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.miui.home.launcher.BlurView android:id="@id/recents_container_blurView" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <include layout="@layout/recents_container" />
+    <include layout="@layout/small_window_crop" />
+</com.miui.home.launcher.RecentsWindowFrameLayout>

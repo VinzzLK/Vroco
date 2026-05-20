@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center" android:id="@id/top_menu_container_imageView_bg" android:layout_width="@dimen/layout_preview_top_menu_width" android:layout_height="@dimen/layout_preview_top_menu_height" />
+    <ImageView android:layout_gravity="center" android:id="@id/top_menu_container_imageView" android:layout_width="@dimen/layout_preview_top_menu_padding" android:layout_height="@dimen/layout_preview_top_menu_padding" />
+</FrameLayout>

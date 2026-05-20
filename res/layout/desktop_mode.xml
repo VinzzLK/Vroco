@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<miuix.visual.check.VisualCheckGroup android:background="@color/transparent" android:paddingTop="@dimen/settings_visual_check_group_padding_top" android:paddingBottom="@dimen/desktop_mode_padding_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/preference_margin_bottom"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <miuix.visual.check.VisualCheckBox android:orientation="vertical" android:id="@id/desktop" android:focusable="true" android:clipChildren="false" android:clipToPadding="false" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <miuix.visual.check.BorderLayout android:layout_width="fill_parent" android:layout_height="wrap_content" app:checkedBackGround="@drawable/desktop_mode_icon_seleced_frame">
+            <FrameLayout android:padding="@dimen/desktop_mode_anim_view_margin" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <com.miui.home.settings.FixedAspectRatioLottieAnimView android:layout_gravity="center" android:id="@id/classic_mode_view" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="@dimen/desktop_mode_subtitle_height" android:src="@drawable/desktop_mode_classic_support_jeejen_icon" android:scaleType="fitXY" app:aspectRatio="@dimen/desktop_mode_ratio" />
+            </FrameLayout>
+        </miuix.visual.check.BorderLayout>
+        <miuix.visual.check.VisualCheckedTextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxWidth="@dimen/desktop_mode_subtitle_width" android:text="@string/all_apps_setting_classic_title" style="@style/SettingsVisualCheckBoxTitle" />
+    </miuix.visual.check.VisualCheckBox>
+    <miuix.visual.check.VisualCheckBox android:orientation="vertical" android:id="@id/drawer" android:focusable="true" android:clipChildren="false" android:clipToPadding="false" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <miuix.visual.check.BorderLayout android:layout_width="fill_parent" android:layout_height="wrap_content" app:checkedBackGround="@drawable/desktop_mode_icon_seleced_frame">
+            <FrameLayout android:padding="@dimen/desktop_mode_anim_view_margin" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <com.miui.home.settings.FixedAspectRatioLottieAnimView android:layout_gravity="center" android:id="@id/drawer_mode_view" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="@dimen/desktop_mode_subtitle_height" android:scaleType="fitXY" app:aspectRatio="@dimen/desktop_mode_ratio" app:lottie_autoPlay="false" app:lottie_loop="true" />
+            </FrameLayout>
+        </miuix.visual.check.BorderLayout>
+        <miuix.visual.check.VisualCheckedTextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxWidth="@dimen/desktop_mode_subtitle_width" android:text="@string/all_apps_setting_drawer_title" style="@style/SettingsVisualCheckBoxTitle" />
+    </miuix.visual.check.VisualCheckBox>
+    <miuix.visual.check.VisualCheckBox android:orientation="vertical" android:id="@id/jeejen" android:focusable="true" android:clipChildren="false" android:clipToPadding="false" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <miuix.visual.check.BorderLayout android:layout_width="fill_parent" android:layout_height="wrap_content" app:checkedBackGround="@drawable/desktop_mode_icon_seleced_frame">
+            <FrameLayout android:padding="@dimen/desktop_mode_anim_view_margin" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <com.miui.home.settings.FixedAspectRatioLottieAnimView android:layout_gravity="center" android:id="@id/jeejen_mode_view" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="@dimen/desktop_mode_subtitle_height" android:src="@drawable/jeejen_mode_icon" android:scaleType="fitXY" app:aspectRatio="@dimen/desktop_mode_ratio" app:lottie_autoPlay="false" app:lottie_loop="true" />
+            </FrameLayout>
+        </miuix.visual.check.BorderLayout>
+        <miuix.visual.check.VisualCheckedTextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxWidth="@dimen/desktop_mode_subtitle_width" android:text="@string/all_apps_setting_jeejen_title" style="@style/SettingsVisualCheckBoxTitle" />
+    </miuix.visual.check.VisualCheckBox>
+</miuix.visual.check.VisualCheckGroup>

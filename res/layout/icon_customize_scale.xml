@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/transparent" android:paddingTop="@dimen/icon_size_linear_layout_margin_top" android:paddingBottom="@dimen/icon_size_linear_layout_margin_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content" android:contentDescription="@string/icon_size_adjust" android:paddingStart="@dimen/icon_size_linear_layout_margin_start" android:paddingEnd="@dimen/icon_size_linear_layout_margin_end"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="@style/Miuix.AppCompat.TextAppearance.PreferenceList" android:fadingEdge="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/icon_size_text_view_margin_top" android:text="@string/icon_size" android:textAlignment="viewStart" />
+    <com.miui.home.settings.IconSizeSeekBar android:id="@id/seek_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/icon_size_seek_bar_margin_top" android:layout_marginBottom="@dimen/icon_size_seek_bar_margin_bottom" />
+</LinearLayout>

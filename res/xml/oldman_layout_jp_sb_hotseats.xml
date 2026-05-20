@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<favorites xmlns:launcher="http://schemas.android.com/apk/res-auto">
+    <favorite launcher:className="com.google.android.dialer.extensions.GoogleDialtactsActivity" launcher:container="-101" launcher:packageName="com.google.android.dialer" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="jp.softbank.mb.plusmessage.SplashScreenActivity" launcher:container="-101" launcher:packageName="jp.softbank.mb.plusmessage" launcher:x="1" launcher:y="0" />
+    <favorite launcher:className="com.android.camera.Camera" launcher:container="-101" launcher:packageName="com.android.camera" launcher:x="2" launcher:y="0" />
+</favorites>

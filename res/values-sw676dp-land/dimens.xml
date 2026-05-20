@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="all_apps_list_padding_left">100.0dip</dimen>
+    <dimen name="all_apps_list_padding_right">70.0dip</dimen>
+    <dimen name="default_screen_preview_padding">126.0dip</dimen>
+    <dimen name="magic_indicator_container_view_margin_end">113.0dip</dimen>
+    <dimen name="magic_indicator_container_view_margin_start">103.0dip</dimen>
+    <dimen name="search_bar_padding_start">188.0dip</dimen>
+</resources>

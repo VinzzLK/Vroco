@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:id="@id/navigation_type_container" android:background="@color/transparent" android:paddingBottom="@dimen/settings_visual_check_group_padding_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/preference_margin_bottom" android:paddingStart="@dimen/navigation_bar_type_container_padding" android:paddingEnd="@dimen/navigation_bar_type_container_padding"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.miui.home.recents.settings.NavigationBarTypeView android:orientation="vertical" android:id="@id/full_screen_gesture" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <com.miui.home.settings.FixedAspectRatioLottieAnimView android:id="@id/full_screen_lottie_view" android:layout_width="0.0dip" android:layout_height="0.0dip" android:scaleType="fitXY" android:adjustViewBounds="true" app:aspectRatio="@dimen/navigation_bar_type_container_ratio" style="@style/NavBarTypeLottieAnim" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="@dimen/navigation_bar_type_width" android:text="@string/navigation_type_full_screen" style="@style/NavBarTypeTitle" />
+    </com.miui.home.recents.settings.NavigationBarTypeView>
+    <com.miui.home.recents.settings.NavigationBarTypeView android:orientation="vertical" android:id="@id/virtual_key" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <com.miui.home.settings.FixedAspectRatioLottieAnimView android:id="@id/nav_lottie_view" android:layout_width="0.0dip" android:layout_height="0.0dip" android:scaleType="fitXY" android:adjustViewBounds="true" app:aspectRatio="@dimen/navigation_bar_type_container_ratio" style="@style/NavBarTypeLottieAnim" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="@dimen/navigation_bar_type_width" android:text="@string/navigation_type_virtual_key" style="@style/NavBarTypeTitle" />
+    </com.miui.home.recents.settings.NavigationBarTypeView>
+</LinearLayout>

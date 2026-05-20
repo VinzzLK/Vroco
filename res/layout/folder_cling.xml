@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.miui.home.launcher.FolderCling android:id="@id/folder_cling" android:visibility="invisible" android:clipChildren="false" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:importantForAccessibility="no"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/folder_icon_1x1" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/folder_icon_1x1" />
+    <include android:id="@id/folder_icon_2x2_4" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/folder_icon_2x2_4" />
+    <include android:id="@id/folder_icon_2x2_9" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/folder_icon_2x2_9" />
+    <com.miui.home.launcher.FitSystemWindowView android:clipChildren="false" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include layout="@layout/folder" />
+        <include android:layout_gravity="bottom|center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/recommend_margin_start" android:layout_marginEnd="@dimen/recommend_margin_end" layout="@layout/small_icons_recommend_screen" />
+    </com.miui.home.launcher.FitSystemWindowView>
+</com.miui.home.launcher.FolderCling>
