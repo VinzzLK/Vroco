@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/top_menu_container_imageView" style="@style/layout_preview_top_menu_imageView" />
-    <TextView android:id="@id/top_menu_container_textView" android:fontFamily="sans-serif-medium" style="@style/layout_preview_top_menu_textView" />
-</FrameLayout>

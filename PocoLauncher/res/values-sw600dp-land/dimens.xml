@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="home_demo_workspace_layout_floder_padding_start">20.0dip</dimen>
-    <dimen name="home_demo_workspace_layout_floder_padding_top">7.0dip</dimen>
-    <dimen name="home_demo_workspace_layout_row_padding_top">23.0dip</dimen>
-    <dimen name="navigation_home_handle_width_actually">250.0dip</dimen>
-</resources>

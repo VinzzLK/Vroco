@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.miui.home.launcher.allapps.search.ZeroMaskView android:id="@id/search_zero_mask" android:background="@color/alpha30black" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <View android:id="@id/view_zero_mask_close_area" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="14.0dip" android:contentDescription="@string/btn_close" />
-    <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_zero_mask" android:background="@drawable/bg_all_apps_search_zero_mask" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:listSelector="@color/transparent" android:stackFromBottom="true" android:transcriptMode="alwaysScroll" android:fadeScrollbars="false" android:layout_marginStart="14.0dip" android:layout_marginEnd="14.0dip" app:layout_constraintBottom_toBottomOf="parent" />
-    <ImageView android:id="@id/iv_zero_mask_close" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:src="@drawable/icon_zero_mask_close" android:contentDescription="@string/btn_close" android:layout_marginEnd="24.0dip" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" />
-</com.miui.home.launcher.allapps.search.ZeroMaskView>

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.miui.home.recents.views.TaskPinView android:gravity="center" android:orientation="horizontal" android:id="@id/task_pin_view" android:background="@drawable/task_pin_bg" android:focusable="true" android:visibility="gone" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:contentDescription="@string/recent_pin_text" android:paddingStart="@dimen/recents_task_pin_padding" android:paddingEnd="@dimen/recents_task_pin_padding"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/task_pin_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/task_pin_icon" android:scaleType="centerInside" />
-    <TextView android:textSize="@dimen/task_pin_text_size" android:textColor="@color/task_pin_text_color" android:id="@id/task_pin_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/recent_pin_text" android:singleLine="true" android:fontFamily="sans-serif-medium" android:layout_marginStart="@dimen/recents_task_pin_divider_width" />
-</com.miui.home.recents.views.TaskPinView>

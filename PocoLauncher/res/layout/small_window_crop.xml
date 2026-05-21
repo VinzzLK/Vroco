@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.miui.home.recents.views.SmallWindowCrop android:orientation="horizontal" android:id="@id/small_view_crop" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:forceHasOverlappingRendering="false"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout android:id="@id/new_small_view_content" android:background="@drawable/new_smallwindow_rect" android:layout_width="@dimen/small_window_show_item" android:layout_height="@dimen/small_window_show_item">
-        <View android:id="@id/new_small_view_icon" android:background="@drawable/smallwindow_icon" android:layout_width="@dimen/small_window_icon_show_item" android:layout_height="@dimen/small_window_icon_show_item" android:layout_centerInParent="true" />
-    </RelativeLayout>
-</com.miui.home.recents.views.SmallWindowCrop>

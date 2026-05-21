@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.miui.home.launcher.allapps.hideapps.HideAppsContentView android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <include android:id="@id/hide_apps_normal_container_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/all_apps_normal_container_view" />
-    <FrameLayout android:id="@id/hide_apps_empty_view" android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <TextView android:textSize="@dimen/text_size_sp13" android:textColor="@color/ui_mode_70_black" android:gravity="center" android:layout_gravity="center" android:id="@id/hide_apps_empty_msg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dp30" android:text="@string/hide_apps_empty_view_content" />
-        <TextView android:textSize="@dimen/text_size_sp14" android:textColor="@color/white" android:gravity="center" android:layout_gravity="bottom" android:id="@id/hide_apps_empty_view_btn_add" android:background="@drawable/icon_pack_apply_button_selector" android:padding="@dimen/dp14" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/dp16" android:text="@string/hide_apps_empty_view_btn_add" android:textAllCaps="false" />
-    </FrameLayout>
-</com.miui.home.launcher.allapps.hideapps.HideAppsContentView>

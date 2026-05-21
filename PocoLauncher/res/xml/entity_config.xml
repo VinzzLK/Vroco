@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<xml>
-    <entity entityType="launch_google_search" launchType="Invoke" regionType="global" title="navigation_shortcut_key_circle_to_search_title" triggerType="NavLongPress">
-        <launchParams packageName="com.miui.home" />
-    </entity>
-</xml>

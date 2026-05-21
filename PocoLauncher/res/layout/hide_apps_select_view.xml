@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.miui.home.launcher.allapps.hideapps.HideAppsSelectView android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <include android:id="@id/hide_apps_normal_container_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="80.0dip" android:layout_alignParentTop="true" layout="@layout/all_apps_normal_container_view" />
-    <include android:id="@id/all_apps_search_container" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/hide_search_container" />
-</com.miui.home.launcher.allapps.hideapps.HideAppsSelectView>
