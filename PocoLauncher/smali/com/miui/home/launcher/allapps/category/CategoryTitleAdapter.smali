@@ -1,0 +1,304 @@
+.class public Lcom/miui/home/launcher/allapps/category/CategoryTitleAdapter;
+.super Lnet/lucode/hackware/magicindicator/buildins/commonnavigator/abs/CommonNavigatorAdapter;
+.source "CategoryTitleAdapter.java"
+
+
+# instance fields
+.field private mContext:Landroid/content/Context;
+
+.field private mPagerAdapter:Lcom/miui/home/library/view/viewpager/PagerAdapter;
+
+.field private mViewPager:Lcom/miui/home/library/view/viewpager/ViewPager;
+
+
+# direct methods
+.method public static synthetic $r8$lambda$vudkvHgN3Dp6vxOQebSH8DflpQY(Lcom/miui/home/launcher/allapps/category/CategoryTitleAdapter;ILandroid/view/View;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lcom/miui/home/launcher/allapps/category/CategoryTitleAdapter;->lambda$getTitleView$0(ILandroid/view/View;)V
+
+    return-void
+.end method
+
+.method constructor <init>(Landroid/content/Context;Lcom/miui/home/library/view/viewpager/ViewPager;)V
+    .locals 0
+
+    .line 27
+    invoke-direct {p0}, Lnet/lucode/hackware/magicindicator/buildins/commonnavigator/abs/CommonNavigatorAdapter;-><init>()V
+
+    .line 28
+    iput-object p1, p0, Lcom/miui/home/launcher/allapps/category/CategoryTitleAdapter;->mContext:Landroid/content/Context;
+
+    .line 29
+    iput-object p2, p0, Lcom/miui/home/launcher/allapps/category/CategoryTitleAdapter;->mViewPager:Lcom/miui/home/library/view/viewpager/ViewPager;
+
+    .line 30
+    invoke-virtual {p2}, Lcom/miui/home/library/view/viewpager/ViewPager;->getAdapter()Lcom/miui/home/library/view/viewpager/PagerAdapter;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/miui/home/launcher/allapps/category/CategoryTitleAdapter;->mPagerAdapter:Lcom/miui/home/library/view/viewpager/PagerAdapter;
+
+    if-eqz p1, :cond_0
+
+    .line 34
+    new-instance p2, Lcom/miui/home/launcher/allapps/category/CategoryTitleAdapter$1;
+
+    invoke-direct {p2, p0}, Lcom/miui/home/launcher/allapps/category/CategoryTitleAdapter$1;-><init>(Lcom/miui/home/launcher/allapps/category/CategoryTitleAdapter;)V
+
+    invoke-virtual {p1, p2}, Lcom/miui/home/library/view/viewpager/PagerAdapter;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
+
+    return-void
+
+    .line 32
+    :cond_0
+    new-instance p0, Ljava/lang/RuntimeException;
+
+    const-string p1, "pager adapter is null"
+
+    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method private synthetic lambda$getTitleView$0(ILandroid/view/View;)V
+    .locals 0
+
+    .line 67
+    iget-object p0, p0, Lcom/miui/home/launcher/allapps/category/CategoryTitleAdapter;->mViewPager:Lcom/miui/home/library/view/viewpager/ViewPager;
+
+    invoke-virtual {p0, p1}, Lcom/miui/home/library/view/viewpager/ViewPager;->setCurrentItem(I)V
+
+    return-void
+.end method
+
+.method private setupIndicator(Lnet/lucode/hackware/magicindicator/buildins/commonnavigator/indicators/LinePagerIndicator;)V
+    .locals 3
+
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Ljava/lang/Integer;
+
+    .line 90
+    invoke-static {}, Lcom/miui/home/launcher/DeviceConfig;->getAllAppsColorMode()Lcom/miui/home/launcher/allapps/AllAppsColorMode;
+
+    move-result-object v1
+
+    iget-object p0, p0, Lcom/miui/home/launcher/allapps/category/CategoryTitleAdapter;->mContext:Landroid/content/Context;
+
+    invoke-static {}, Lcom/miui/home/launcher/DeviceConfig;->getAllAppsBackgroundAlpha()I
+
+    move-result v2
+
+    invoke-virtual {v1, p0, v2}, Lcom/miui/home/launcher/allapps/AllAppsColorMode;->getCategoryIndicatorColor(Landroid/content/Context;I)I
+
+    move-result p0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    const/4 v1, 0x0
+
+    aput-object p0, v0, v1
+
+    invoke-virtual {p1, v0}, Lnet/lucode/hackware/magicindicator/buildins/commonnavigator/indicators/LinePagerIndicator;->setColors([Ljava/lang/Integer;)V
+
+    return-void
+.end method
+
+.method private setupTitleView(Lnet/lucode/hackware/magicindicator/buildins/commonnavigator/titles/SimplePagerTitleView;)V
+    .locals 3
+
+    .line 72
+    invoke-static {}, Lcom/miui/home/launcher/DeviceConfig;->getAllAppsColorMode()Lcom/miui/home/launcher/allapps/AllAppsColorMode;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/miui/home/launcher/allapps/category/CategoryTitleAdapter;->mContext:Landroid/content/Context;
+
+    invoke-static {}, Lcom/miui/home/launcher/DeviceConfig;->getAllAppsBackgroundAlpha()I
+
+    move-result v2
+
+    invoke-virtual {v0, v1, v2}, Lcom/miui/home/launcher/allapps/AllAppsColorMode;->getCategoryTitleNormalColor(Landroid/content/Context;I)I
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Lnet/lucode/hackware/magicindicator/buildins/commonnavigator/titles/SimplePagerTitleView;->setNormalColor(I)V
+
+    .line 73
+    invoke-static {}, Lcom/miui/home/launcher/DeviceConfig;->getAllAppsColorMode()Lcom/miui/home/launcher/allapps/AllAppsColorMode;
+
+    move-result-object v0
+
+    iget-object p0, p0, Lcom/miui/home/launcher/allapps/category/CategoryTitleAdapter;->mContext:Landroid/content/Context;
+
+    invoke-static {}, Lcom/miui/home/launcher/DeviceConfig;->getAllAppsBackgroundAlpha()I
+
+    move-result v1
+
+    invoke-virtual {v0, p0, v1}, Lcom/miui/home/launcher/allapps/AllAppsColorMode;->getCategoryIndicatorColor(Landroid/content/Context;I)I
+
+    move-result p0
+
+    invoke-virtual {p1, p0}, Lnet/lucode/hackware/magicindicator/buildins/commonnavigator/titles/SimplePagerTitleView;->setSelectedColor(I)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public getCount()I
+    .locals 0
+
+    .line 44
+    iget-object p0, p0, Lcom/miui/home/launcher/allapps/category/CategoryTitleAdapter;->mPagerAdapter:Lcom/miui/home/library/view/viewpager/PagerAdapter;
+
+    invoke-virtual {p0}, Lcom/miui/home/library/view/viewpager/PagerAdapter;->getCount()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public getIndicator(Landroid/content/Context;)Lnet/lucode/hackware/magicindicator/buildins/commonnavigator/abs/IPagerIndicator;
+    .locals 3
+
+    .line 78
+    new-instance v0, Lnet/lucode/hackware/magicindicator/buildins/commonnavigator/indicators/LinePagerIndicator;
+
+    invoke-direct {v0, p1}, Lnet/lucode/hackware/magicindicator/buildins/commonnavigator/indicators/LinePagerIndicator;-><init>(Landroid/content/Context;)V
+
+    .line 79
+    new-instance v1, Landroid/view/animation/AccelerateInterpolator;
+
+    invoke-direct {v1}, Landroid/view/animation/AccelerateInterpolator;-><init>()V
+
+    invoke-virtual {v0, v1}, Lnet/lucode/hackware/magicindicator/buildins/commonnavigator/indicators/LinePagerIndicator;->setStartInterpolator(Landroid/view/animation/Interpolator;)V
+
+    const/high16 v1, 0x40000000    # 2.0f
+
+    .line 80
+    invoke-static {v1}, Lcom/miui/home/launcher/common/Utilities;->dp2px(F)I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    invoke-virtual {v0, v1}, Lnet/lucode/hackware/magicindicator/buildins/commonnavigator/indicators/LinePagerIndicator;->setRoundRadius(F)V
+
+    .line 81
+    new-instance v1, Landroid/view/animation/DecelerateInterpolator;
+
+    const v2, 0x3fcccccd    # 1.6f
+
+    invoke-direct {v1, v2}, Landroid/view/animation/DecelerateInterpolator;-><init>(F)V
+
+    invoke-virtual {v0, v1}, Lnet/lucode/hackware/magicindicator/buildins/commonnavigator/indicators/LinePagerIndicator;->setEndInterpolator(Landroid/view/animation/Interpolator;)V
+
+    const/4 v1, 0x0
+
+    .line 82
+    invoke-virtual {v0, v1}, Lnet/lucode/hackware/magicindicator/buildins/commonnavigator/indicators/LinePagerIndicator;->setMode(I)V
+
+    const/high16 v1, 0x41400000    # 12.0f
+
+    .line 83
+    invoke-static {v1}, Lcom/miui/home/launcher/common/Utilities;->dp2px(F)I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    invoke-virtual {v0, v1}, Lnet/lucode/hackware/magicindicator/buildins/commonnavigator/indicators/LinePagerIndicator;->setXOffset(F)V
+
+    .line 84
+    invoke-static {}, Lcom/miui/home/launcher/DeviceConfig;->isFoldDevice()Z
+
+    move-result v1
+
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p1
+
+    if-eqz v1, :cond_0
+
+    const v1, 0x7f0701ac
+
+    goto :goto_0
+
+    :cond_0
+    const v1, 0x7f07028f
+
+    :goto_0
+    invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result p1
+
+    invoke-virtual {v0, p1}, Lnet/lucode/hackware/magicindicator/buildins/commonnavigator/indicators/LinePagerIndicator;->setYOffset(F)V
+
+    .line 85
+    invoke-direct {p0, v0}, Lcom/miui/home/launcher/allapps/category/CategoryTitleAdapter;->setupIndicator(Lnet/lucode/hackware/magicindicator/buildins/commonnavigator/indicators/LinePagerIndicator;)V
+
+    return-object v0
+.end method
+
+.method public getTitleView(Landroid/content/Context;I)Lnet/lucode/hackware/magicindicator/buildins/commonnavigator/abs/IPagerTitleView;
+    .locals 3
+
+    .line 49
+    new-instance v0, Lcom/miui/home/launcher/allapps/category/CategoryTitleAdapter$2;
+
+    invoke-direct {v0, p0, p1, p1}, Lcom/miui/home/launcher/allapps/category/CategoryTitleAdapter$2;-><init>(Lcom/miui/home/launcher/allapps/category/CategoryTitleAdapter;Landroid/content/Context;Landroid/content/Context;)V
+
+    const-string v1, "mipro-medium"
+
+    const/4 v2, 0x0
+
+    .line 62
+    invoke-static {v1, v2}, Landroid/graphics/Typeface;->create(Ljava/lang/String;I)Landroid/graphics/Typeface;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+
+    const/16 v1, 0xf
+
+    .line 63
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMaxEms(I)V
+
+    .line 64
+    invoke-direct {p0, v0}, Lcom/miui/home/launcher/allapps/category/CategoryTitleAdapter;->setupTitleView(Lnet/lucode/hackware/magicindicator/buildins/commonnavigator/titles/SimplePagerTitleView;)V
+
+    .line 65
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p1
+
+    const v1, 0x7f07005a
+
+    invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result p1
+
+    invoke-virtual {v0, v2, p1}, Landroid/widget/TextView;->setTextSize(IF)V
+
+    .line 66
+    iget-object p1, p0, Lcom/miui/home/launcher/allapps/category/CategoryTitleAdapter;->mPagerAdapter:Lcom/miui/home/library/view/viewpager/PagerAdapter;
+
+    invoke-virtual {p1, p2}, Lcom/miui/home/library/view/viewpager/PagerAdapter;->getPageTitle(I)Ljava/lang/CharSequence;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 67
+    new-instance p1, Lcom/miui/home/launcher/allapps/category/CategoryTitleAdapter$$ExternalSyntheticLambda0;
+
+    invoke-direct {p1, p0, p2}, Lcom/miui/home/launcher/allapps/category/CategoryTitleAdapter$$ExternalSyntheticLambda0;-><init>(Lcom/miui/home/launcher/allapps/category/CategoryTitleAdapter;I)V
+
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    return-object v0
+.end method

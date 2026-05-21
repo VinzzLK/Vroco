@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/launcher_title" android:key="launcher_setting_screen" android:layoutDirection="locale"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <miuix.preference.PreferenceCategory android:title="@string/miui_setting_config_title" android:key="miui_home_config_pref">
+        <com.miui.home.settings.preference.ValuePreference android:title="@string/all_apps_setting_title" android:key="all_apps_setting_pref" />
+        <com.miui.home.settings.preference.CheckBoxPreference android:persistent="false" android:title="@string/open_personal_assistant_title" android:key="open_personal_assistant_pref" android:defaultValue="true" />
+        <com.miui.home.settings.preference.ValuePreference android:persistent="false" android:title="@string/open_personal_assistant_settings" android:key="open_personal_assistant_settings_pref" android:defaultValue="true" app:isPreferenceVisible="false" />
+        <com.miui.home.settings.preference.ValuePreference android:title="@string/home_switch_personal_assistant" android:key="switch_personal_assistant_pref" />
+        <com.miui.home.settings.preference.CheckBoxPreference android:title="@string/launcher_search_bar_title" android:key="launcher_search_bar" />
+        <com.miui.home.settings.preference.CheckBoxPreference android:persistent="false" android:title="@string/launcher_sliding_up_gesture" android:key="launcher_slide_up_global_pref" android:defaultValue="true" />
+        <com.miui.home.settings.preference.ListPreference android:title="@string/animation_rate_title" android:key="animation_rate" />
+        <com.miui.home.settings.preference.CheckBoxPreference android:persistent="false" android:title="@string/gesture_tap_lock" android:key="gesture_control_check" android:defaultValue="false" />
+    </miuix.preference.PreferenceCategory>
+    <miuix.preference.PreferenceCategory android:title="@string/miui_screen_config_title" android:key="miui_screen_config_pref">
+        <com.miui.home.settings.preference.CheckBoxPreference android:persistent="false" android:title="@string/menu_auto_fill_of_uninstall" android:key="auto_fill_empty_pref" android:defaultValue="false" />
+        <com.miui.home.settings.preference.CheckBoxPreference android:persistent="false" android:title="@string/lock_screen_cells_title" android:key="lock_screen_cells_pref" android:defaultValue="false" />
+        <com.miui.home.settings.preference.ListPreference android:persistent="false" android:title="@string/menu_no_word" android:key="no_word_model" android:defaultValue="false" />
+        <com.miui.home.settings.preference.ValuePreference android:title="@string/screen_cells_config_title" android:key="screen_cell_config" />
+    </miuix.preference.PreferenceCategory>
+    <miuix.preference.PreferenceCategory android:title="@string/new_recents_config_title" android:key="recents_config_pref">
+        <com.miui.home.settings.preference.ValuePreference android:title="@string/navigation_type_title" android:key="navigation_type" />
+        <com.miui.home.settings.preference.ValuePreference android:title="@string/recents_layout_style" android:key="recents_layout_style" />
+        <com.miui.home.settings.preference.CheckBoxPreference android:persistent="false" android:title="@string/show_mem_info_title" android:key="show_mem_info_pref" android:defaultValue="false" />
+    </miuix.preference.PreferenceCategory>
+</PreferenceScreen>

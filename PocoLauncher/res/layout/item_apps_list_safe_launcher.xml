@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/container" android:layout_width="@dimen/safe_launch_item_width" android:layout_height="@dimen/safe_launch_item_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:gravity="center" android:layout_gravity="center|top" android:id="@id/icon" android:background="@color/safe_mode_color_CC000000" android:layout_width="@dimen/safe_launch_icon_size" android:layout_height="@dimen/safe_launch_icon_size" />
+    <TextView android:textSize="@dimen/safe_launch_12sp" android:textColor="@color/safe_mode_color_99FFFFFF" android:ellipsize="end" android:gravity="center|top" android:layout_gravity="center_horizontal" android:id="@id/title" android:layout_width="@dimen/safe_launch_80_dp" android:layout_height="0.0dip" android:layout_marginTop="@dimen/safe_launch_2_dp" android:maxLines="1" android:layout_weight="1.0" android:contentDescription="@string/safe_launcher_header_check_update" android:fontFamily="mipro-medium" />
+</LinearLayout>

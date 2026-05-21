@@ -1,0 +1,17 @@
+html,body {
+    margin: 0px;
+    padding: 10px;
+    background-color: #f8f8f8;
+    /* font-family: "Times New Roman"; */
+}
+p{font-size: 12px;
+    line-height: 24px;
+    margin-bottom: 15px;
+    color: #555555;
+}
+li {
+    font-size: 12px;
+    line-height: 24px;
+    margin-bottom: 15px;
+    color: #555555;
+}

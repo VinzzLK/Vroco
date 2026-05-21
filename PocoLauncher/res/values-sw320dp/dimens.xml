@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="delivery_indicator2x2_margin_start">2.019989dip</dimen>
+    <dimen name="delivery_indicator4x2_margin_start">5.909973dip</dimen>
+    <dimen name="delivery_layout_default4x2_app_grid_spacing_h">9.709991dip</dimen>
+    <dimen name="delivery_layout_default4x2_app_grid_spacing_v">5.659973dip</dimen>
+    <dimen name="delivery_layout_default4x2_padding">14.559998dip</dimen>
+    <dimen name="delivery_layout_delivery4x2_app_grid_height">113.25998dip</dimen>
+    <dimen name="delivery_layout_delivery4x2_app_grid_spacing_h">9.709991dip</dimen>
+    <dimen name="delivery_layout_delivery4x2_app_grid_spacing_v">5.659973dip</dimen>
+    <dimen name="delivery_layout_delivery4x2_app_grid_width">121.349976dip</dimen>
+    <dimen name="delivery_layout_delivery_padding_horizontal">8.089996dip</dimen>
+    <dimen name="delivery_layout_delivery_widget_size">113.25998dip</dimen>
+    <dimen name="delivery_widget_animation_translate">16.179993dip</dimen>
+    <dimen name="delivery_widget_radius">12.139984dip</dimen>
+    <dimen name="delivery_widget_size">129.44dip</dimen>
+    <dimen name="small_delivery_widget_radius">22.25dip</dimen>
+</resources>

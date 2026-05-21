@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="small_window_container_item_image_size">52.0dip</dimen>
+    <dimen name="small_window_container_title_top_margin">10.0dip</dimen>
+    <dimen name="small_window_edit_head_background_height">306.89844dip</dimen>
+    <dimen name="small_window_edit_header_text_size">19.639984sp</dimen>
+    <dimen name="small_window_edit_icon_badge_size">40.0dip</dimen>
+    <dimen name="small_window_edit_icon_height">67.0dip</dimen>
+    <dimen name="small_window_edit_icon_image_size">60.26999dip</dimen>
+    <dimen name="small_window_edit_icon_width">69.0dip</dimen>
+    <dimen name="small_window_edit_title_text_size">25.0sp</dimen>
+    <dimen name="small_window_edit_title_top_margin">58.179993dip</dimen>
+    <dimen name="small_window_item_title_margin_top">6.549988dip</dimen>
+    <dimen name="small_window_item_title_text_size">13.099976sp</dimen>
+    <dimen name="small_window_selected_icon_badge_size">40.0dip</dimen>
+    <dimen name="small_window_selected_icon_image_size">50.899994dip</dimen>
+    <dimen name="small_window_selected_icon_size">60.0dip</dimen>
+</resources>

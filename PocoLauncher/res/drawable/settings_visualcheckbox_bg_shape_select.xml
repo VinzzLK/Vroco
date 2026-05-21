@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:shape="rectangle"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <stroke android:width="@dimen/visual_checkbox_bg_shape_select_width" android:color="@color/desktop_mode_selected_subtitile" />
+    <solid android:color="@android:color/transparent" />
+    <corners android:topLeftRadius="@dimen/settings_visual_checkbox_bg_shape_select_radius" android:topRightRadius="@dimen/settings_visual_checkbox_bg_shape_select_radius" android:bottomLeftRadius="@dimen/settings_visual_checkbox_bg_shape_select_radius" android:bottomRightRadius="@dimen/settings_visual_checkbox_bg_shape_select_radius" />
+</shape>

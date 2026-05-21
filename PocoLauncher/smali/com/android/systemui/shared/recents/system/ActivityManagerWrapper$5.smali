@@ -1,0 +1,216 @@
+.class Lcom/android/systemui/shared/recents/system/ActivityManagerWrapper$5;
+.super Lcom/android/systemui/shared/recents/IRecentsAnimationRunnerAtLeastS$Stub;
+.source "ActivityManagerWrapper.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/systemui/shared/recents/system/ActivityManagerWrapper;->initIRecentsAnimationRunnerAtLeastS(Lcom/android/systemui/shared/recents/system/RecentsAnimationListener;)Lcom/android/systemui/shared/recents/IRecentsAnimationRunnerAtLeastS;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Lcom/android/systemui/shared/recents/system/ActivityManagerWrapper;
+
+.field final synthetic val$listener:Lcom/android/systemui/shared/recents/system/RecentsAnimationListener;
+
+
+# direct methods
+.method constructor <init>(Lcom/android/systemui/shared/recents/system/ActivityManagerWrapper;Lcom/android/systemui/shared/recents/system/RecentsAnimationListener;)V
+    .locals 0
+
+    .line 965
+    iput-object p1, p0, Lcom/android/systemui/shared/recents/system/ActivityManagerWrapper$5;->this$0:Lcom/android/systemui/shared/recents/system/ActivityManagerWrapper;
+
+    iput-object p2, p0, Lcom/android/systemui/shared/recents/system/ActivityManagerWrapper$5;->val$listener:Lcom/android/systemui/shared/recents/system/RecentsAnimationListener;
+
+    invoke-direct {p0}, Lcom/android/systemui/shared/recents/IRecentsAnimationRunnerAtLeastS$Stub;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onAnimationCanceled(Ljava/lang/Object;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 968
+    iget-object p0, p0, Lcom/android/systemui/shared/recents/system/ActivityManagerWrapper$5;->val$listener:Lcom/android/systemui/shared/recents/system/RecentsAnimationListener;
+
+    const/4 p1, 0x0
+
+    invoke-interface {p0, p1}, Lcom/android/systemui/shared/recents/system/RecentsAnimationListener;->onAnimationCanceled(Z)V
+
+    const-string p0, "ActivityManagerWrapper"
+
+    const-string p1, "initIRecentsAnimationRunnerAtLeastS: onAnimationCanceled 1"
+
+    .line 969
+    invoke-static {p0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+.end method
+
+.method public onAnimationCanceled([I[Ljava/lang/Object;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 975
+    iget-object p0, p0, Lcom/android/systemui/shared/recents/system/ActivityManagerWrapper$5;->val$listener:Lcom/android/systemui/shared/recents/system/RecentsAnimationListener;
+
+    const/4 p1, 0x0
+
+    invoke-interface {p0, p1}, Lcom/android/systemui/shared/recents/system/RecentsAnimationListener;->onAnimationCanceled(Z)V
+
+    const-string p0, "ActivityManagerWrapper"
+
+    const-string p1, "initIRecentsAnimationRunnerAtLeastS: onAnimationCanceled 2"
+
+    .line 976
+    invoke-static {p0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+.end method
+
+.method public onAnimationStart(Landroid/view/IRecentsAnimationController;[Landroid/view/RemoteAnimationTarget;[Landroid/view/RemoteAnimationTarget;Landroid/graphics/Rect;Landroid/graphics/Rect;)V
+    .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    const-string p3, "ActivityManagerWrapper"
+
+    const-string v0, "IRecentsAnimationRunnerAtLeastS onAnimationStart"
+
+    .line 983
+    invoke-static {p3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string v0, "onRecentsAnimationStart"
+
+    const/4 v1, 0x0
+
+    .line 984
+    invoke-static {v0, v1}, Landroid/os/Trace;->beginAsyncSection(Ljava/lang/String;I)V
+
+    const-string v2, "onRecentsAnimationPlaying"
+
+    .line 985
+    invoke-static {v2, v1}, Landroid/os/Trace;->beginAsyncSection(Ljava/lang/String;I)V
+
+    .line 986
+    array-length v2, p2
+
+    new-array v2, v2, [Lcom/android/systemui/shared/recents/system/RemoteAnimationTargetCompat;
+
+    move v3, v1
+
+    .line 988
+    :goto_0
+    array-length v4, p2
+
+    if-ge v3, v4, :cond_0
+
+    .line 989
+    new-instance v4, Lcom/android/systemui/shared/recents/system/RemoteAnimationTargetCompat;
+
+    aget-object v5, p2, v3
+
+    invoke-direct {v4, v5}, Lcom/android/systemui/shared/recents/system/RemoteAnimationTargetCompat;-><init>(Landroid/view/RemoteAnimationTarget;)V
+
+    aput-object v4, v2, v3
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    .line 992
+    :cond_0
+    iget-object p0, p0, Lcom/android/systemui/shared/recents/system/ActivityManagerWrapper$5;->val$listener:Lcom/android/systemui/shared/recents/system/RecentsAnimationListener;
+
+    new-instance p2, Lcom/android/systemui/shared/recents/system/RecentsAnimationControllerCompat;
+
+    invoke-direct {p2, p1}, Lcom/android/systemui/shared/recents/system/RecentsAnimationControllerCompat;-><init>(Landroid/view/IRecentsAnimationController;)V
+
+    invoke-interface {p0, p2, v2, p4, p5}, Lcom/android/systemui/shared/recents/system/RecentsAnimationListener;->onAnimationStart(Lcom/android/systemui/shared/recents/system/RecentsAnimationControllerCompat;[Lcom/android/systemui/shared/recents/system/RemoteAnimationTargetCompat;Landroid/graphics/Rect;Landroid/graphics/Rect;)V
+
+    .line 993
+    invoke-static {v0, v1}, Landroid/os/Trace;->endAsyncSection(Ljava/lang/String;I)V
+
+    const-string p0, "initIRecentsAnimationRunnerAtLeastS: onAnimationStart"
+
+    .line 994
+    invoke-static {p3, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+.end method
+
+.method public onTaskAppeared(Landroid/view/RemoteAnimationTarget;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 999
+    iget-object p0, p0, Lcom/android/systemui/shared/recents/system/ActivityManagerWrapper$5;->val$listener:Lcom/android/systemui/shared/recents/system/RecentsAnimationListener;
+
+    new-instance v0, Lcom/android/systemui/shared/recents/system/RemoteAnimationTargetCompat;
+
+    invoke-direct {v0, p1}, Lcom/android/systemui/shared/recents/system/RemoteAnimationTargetCompat;-><init>(Landroid/view/RemoteAnimationTarget;)V
+
+    invoke-interface {p0, v0}, Lcom/android/systemui/shared/recents/system/RecentsAnimationListener;->onTaskAppeared(Lcom/android/systemui/shared/recents/system/RemoteAnimationTargetCompat;)V
+
+    const-string p0, "ActivityManagerWrapper"
+
+    const-string p1, "initIRecentsAnimationRunnerAtLeastS: onTaskAppeared 1"
+
+    .line 1000
+    invoke-static {p0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+.end method
+
+.method public onTasksAppeared([Landroid/view/RemoteAnimationTarget;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 1005
+    invoke-static {p1}, Lcom/android/systemui/shared/recents/system/RemoteAnimationTargetCompat;->wrap([Landroid/view/RemoteAnimationTarget;)[Lcom/android/systemui/shared/recents/system/RemoteAnimationTargetCompat;
+
+    move-result-object p1
+
+    .line 1006
+    iget-object p0, p0, Lcom/android/systemui/shared/recents/system/ActivityManagerWrapper$5;->val$listener:Lcom/android/systemui/shared/recents/system/RecentsAnimationListener;
+
+    invoke-interface {p0, p1}, Lcom/android/systemui/shared/recents/system/RecentsAnimationListener;->onTasksAppeared([Lcom/android/systemui/shared/recents/system/RemoteAnimationTargetCompat;)V
+
+    const-string p0, "ActivityManagerWrapper"
+
+    const-string p1, "initIRecentsAnimationRunnerAtLeastS: onTaskAppeared 2"
+
+    .line 1007
+    invoke-static {p0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+.end method

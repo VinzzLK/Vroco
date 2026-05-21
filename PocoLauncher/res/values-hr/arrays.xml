@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="animation_rate_entries">
+        <item>Opušteno</item>
+        <item>Uravnoteženo</item>
+        <item>Ubrzano</item>
+    </string-array>
+    <string-array name="color_filter_type_name">
+        <item></item>
+        <item>Crveno</item>
+        <item>Žuto</item>
+        <item>Zeleno</item>
+        <item>Plava</item>
+        <item>Ljubičasto</item>
+        <item>Crno</item>
+    </string-array>
+    <string-array name="editing_mode_entries_new">
+        <item>Slika pozadine</item>
+        <item>Efekti</item>
+        <item>Widgeti</item>
+        <item>Postavke</item>
+    </string-array>
+    <string-array name="monochrome_color_entries">
+        <item>Zadano</item>
+        <item>Plavo</item>
+        <item>Zeleno</item>
+        <item>Ljubičasto</item>
+        <item>Smeđe</item>
+    </string-array>
+    <string-array name="no_word_model_entries">
+        <item>Isključi</item>
+        <item>Bilo gdje</item>
+        <item>O widgetima</item>
+    </string-array>
+    <string-array name="no_word_model_entries_not_support_only_widget_no_word">
+        <item>Isključi</item>
+        <item>Bilo gdje</item>
+    </string-array>
+    <string-array name="transformation_entries">
+        <item>Klizanje</item>
+        <item>Križno nestajanje</item>
+        <item>Prevaliti</item>
+        <item>Stranica</item>
+        <item>Vodopad</item>
+        <item>Rotiraj</item>
+        <item>Kocka</item>
+    </string-array>
+</resources>

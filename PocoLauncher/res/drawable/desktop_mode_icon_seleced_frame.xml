@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:shape="rectangle"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <stroke android:width="4.0dip" android:color="@color/desktop_mode_selected_subtitile" />
+    <solid android:color="@android:color/transparent" />
+    <corners android:topLeftRadius="@dimen/desktop_mode_selected_frame_radius" android:topRightRadius="@dimen/desktop_mode_selected_frame_radius" android:bottomLeftRadius="@dimen/desktop_mode_selected_frame_radius" android:bottomRightRadius="@dimen/desktop_mode_selected_frame_radius" />
+</shape>

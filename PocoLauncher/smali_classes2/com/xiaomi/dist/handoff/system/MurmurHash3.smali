@@ -1,0 +1,158 @@
+.class Lcom/xiaomi/dist/handoff/system/MurmurHash3;
+.super Ljava/lang/Object;
+.source "MurmurHash3.java"
+
+
+# direct methods
+.method static hash([BI)I
+    .locals 8
+
+    .line 22
+    array-length v0, p0
+
+    const/4 v1, 0x0
+
+    move v2, v1
+
+    :goto_0
+    const v3, 0x1b873593
+
+    const/16 v4, 0xf
+
+    const v5, -0x3361d2af    # -8.293031E7f
+
+    const/4 v6, 0x4
+
+    if-lt v0, v6, :cond_0
+
+    .line 25
+    invoke-static {p0, v2, v6}, Ljava/nio/ByteBuffer;->wrap([BII)Ljava/nio/ByteBuffer;
+
+    move-result-object v6
+
+    sget-object v7, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
+
+    invoke-virtual {v6, v7}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/nio/ByteBuffer;->getInt()I
+
+    move-result v6
+
+    mul-int/2addr v6, v5
+
+    .line 27
+    invoke-static {v6, v4}, Ljava/lang/Integer;->rotateLeft(II)I
+
+    move-result v4
+
+    mul-int/2addr v4, v3
+
+    xor-int/2addr p1, v4
+
+    const/16 v3, 0xd
+
+    .line 30
+    invoke-static {p1, v3}, Ljava/lang/Integer;->rotateLeft(II)I
+
+    move-result p1
+
+    mul-int/lit8 p1, p1, 0x5
+
+    const v3, -0x19ab949c
+
+    add-int/2addr p1, v3
+
+    add-int/lit8 v2, v2, 0x4
+
+    add-int/lit8 v0, v0, -0x4
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v6, 0x1
+
+    if-eq v0, v6, :cond_3
+
+    const/4 v6, 0x2
+
+    if-eq v0, v6, :cond_2
+
+    const/4 v6, 0x3
+
+    if-eq v0, v6, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    add-int/lit8 v0, v2, 0x2
+
+    .line 38
+    aget-byte v0, p0, v0
+
+    and-int/lit16 v0, v0, 0xff
+
+    shl-int/lit8 v0, v0, 0x10
+
+    xor-int/2addr v1, v0
+
+    :cond_2
+    add-int/lit8 v0, v2, 0x1
+
+    .line 40
+    aget-byte v0, p0, v0
+
+    and-int/lit16 v0, v0, 0xff
+
+    shl-int/lit8 v0, v0, 0x8
+
+    xor-int/2addr v1, v0
+
+    .line 42
+    :cond_3
+    aget-byte v0, p0, v2
+
+    and-int/lit16 v0, v0, 0xff
+
+    xor-int/2addr v0, v1
+
+    mul-int/2addr v0, v5
+
+    .line 44
+    invoke-static {v0, v4}, Ljava/lang/Integer;->rotateLeft(II)I
+
+    move-result v0
+
+    mul-int/2addr v0, v3
+
+    xor-int/2addr p1, v0
+
+    .line 48
+    :goto_1
+    array-length p0, p0
+
+    xor-int/2addr p0, p1
+
+    ushr-int/lit8 p1, p0, 0x10
+
+    xor-int/2addr p0, p1
+
+    const p1, -0x7a143595
+
+    mul-int/2addr p0, p1
+
+    ushr-int/lit8 p1, p0, 0xd
+
+    xor-int/2addr p0, p1
+
+    const p1, -0x3d4d51cb
+
+    mul-int/2addr p0, p1
+
+    ushr-int/lit8 p1, p0, 0x10
+
+    xor-int/2addr p0, p1
+
+    return p0
+.end method

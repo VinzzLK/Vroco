@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.miui.home.launcher.allapps.hideapps.AllAppsNormalContainerView android:id="@id/all_apps_normal_container_view" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout android:layout_width="fill_parent" android:layout_height="fill_parent" app:srlDragRate="0.75" app:srlEnableLoadMore="true" app:srlEnablePureScrollMode="true" app:srlFooterHeight="150.0dip" app:srlFooterMaxDragRate="2.0" app:srlHeaderHeight="150.0dip" app:srlHeaderMaxDragRate="2.0" app:srlReboundDuration="700">
+        <com.miui.home.launcher.allapps.hideapps.HideAppsRecyclerView android:id="@id/apps_list_view" android:focusable="true" android:clipChildren="false" android:clipToPadding="false" android:descendantFocusability="afterDescendants" android:layout_width="fill_parent" android:layout_height="fill_parent" android:overScrollMode="never" android:paddingStart="@dimen/workspace_cell_padding_side" android:paddingEnd="@dimen/workspace_cell_padding_side" app:fastScroller="false" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    <TextView android:id="@id/fast_scroller_popup" android:layout_marginTop="@dimen/dp8" android:layout_marginRight="@dimen/container_fastscroll_popup_margin" android:layout_alignParentRight="true" style="@style/FastScrollerPopup" />
+</com.miui.home.launcher.allapps.hideapps.AllAppsNormalContainerView>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="217.0" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="569.0">
+        <View android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="89.0" />
+        <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="239.0">
+            <ImageView android:layout_gravity="left" android:id="@id/recents_first_card_icon" android:paddingBottom="@dimen/recents_task_view_icon_padding_bottom" android:layout_width="wrap_content" android:layout_height="0.0dip" android:src="@drawable/fsg_demo_recents_first_card_icon" android:adjustViewBounds="true" android:layout_weight="54.0" />
+            <ImageView android:id="@id/recents_first_card" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="0.0dip" android:src="@drawable/fsg_demo_recents_first_card_content" android:scaleType="fitXY" android:adjustViewBounds="true" android:layout_weight="250.0" />
+            <ImageView android:paddingBottom="@dimen/recents_task_view_icon_padding_bottom" android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_marginTop="@dimen/fold_recents_task_view_header_height" android:src="@drawable/fsg_demo_recents_third_card_icon" android:adjustViewBounds="true" android:layout_weight="54.0" />
+            <com.android.systemui.fsgesture.WidthAdaptiveView android:background="@drawable/fsg_demo_recents_third_card_content" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="140.0" />
+        </LinearLayout>
+        <View android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="40.0" />
+        <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="239.0">
+            <ImageView android:paddingBottom="@dimen/recents_task_view_icon_padding_bottom" android:layout_width="wrap_content" android:layout_height="0.0dip" android:src="@drawable/fsg_demo_recents_second_card_icon" android:adjustViewBounds="true" android:layout_weight="54.0" />
+            <ImageView android:layout_width="fill_parent" android:layout_height="0.0dip" android:src="@drawable/fsg_demo_recents_second_card_content" android:scaleType="fitXY" android:adjustViewBounds="true" android:layout_weight="250.0" />
+            <ImageView android:paddingBottom="@dimen/recents_task_view_icon_padding_bottom" android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_marginTop="@dimen/fold_recents_task_view_header_height" android:src="@drawable/fsg_demo_recents_fourth_card_icon" android:adjustViewBounds="true" android:layout_weight="54.0" />
+            <com.android.systemui.fsgesture.WidthAdaptiveView android:background="@drawable/fsg_demo_recents_fourth_card_content" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="140.0" />
+        </LinearLayout>
+        <View android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="89.0" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/home_demo_workspace_layout_clear_button_padding_bottom">
+        <ImageView android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/fs_gesture_demo_clear_button" />
+    </LinearLayout>
+</LinearLayout>
