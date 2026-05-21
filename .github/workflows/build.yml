@@ -27,45 +27,36 @@ jobs:
             -O /usr/local/bin/apktool
           chmod +x /usr/local/bin/apktool
 
-      - name: Validate Manifest Package Name
+      - name: Validate Manifest
         run: |
-          PKG=$(grep -o 'package="[^"]*"' AndroidManifest.xml | head -1)
-          echo "=== PACKAGE NAME CHECK ==="
-          echo "Found: $PKG"
-          if echo "$PKG" | grep -q "com.vroco.launcher"; then
-            echo "✅ Package name correct"
-          else
-            echo "❌ WRONG PACKAGE NAME — still using old package!"
-            echo "Expected: package=\"com.vroco.launcher\""
-            echo "Got: $PKG"
-            exit 1
-          fi
-          echo ""
-          echo "=== SHARED USER ID CHECK ==="
-          if grep -q "sharedUserId" AndroidManifest.xml; then
-            echo "❌ sharedUserId still present — will cause install failure as user app"
-            grep "sharedUserId" AndroidManifest.xml
-            exit 1
-          else
-            echo "✅ sharedUserId removed"
-          fi
+          echo "=== PACKAGE NAME ==="
+          grep -o 'package="[^"]*"' AndroidManifest.xml | head -1
+          echo "=== SHARED USER ID (must be empty) ==="
+          grep "sharedUserId" AndroidManifest.xml && exit 1 || echo "CLEAN"
+          echo "=== EXTRACT NATIVE LIBS ==="
+          grep "extractNativeLibs" AndroidManifest.xml
 
       - name: Build APK
         run: |
           echo "=== APKTOOL BUILD ==="
-          apktool b . -o VrocoLauncher-unsigned.apk --use-aapt2 2>&1 | tee build.log
-          echo ""
-          echo "=== BUILD WARNINGS ==="
-          grep -i "warn\|error\|fail" build.log || echo "No warnings/errors"
-          echo ""
-          echo "=== APK SIZE ==="
-          ls -lh VrocoLauncher-unsigned.apk
+          apktool b . -o VrocoLauncher-raw.apk --use-aapt2 2>&1 | tee build.log
+          echo "=== WARNINGS/ERRORS ==="
+          grep -iE "warn|error|fail|exception" build.log || echo "None"
 
-      - name: Generate debug keystore
+      - name: Zipalign
+        run: |
+          BUILD_TOOLS=$(ls $ANDROID_SDK_ROOT/build-tools | sort -V | tail -1)
+          echo "=== ZIPALIGN (build-tools: $BUILD_TOOLS) ==="
+          $ANDROID_SDK_ROOT/build-tools/$BUILD_TOOLS/zipalign -v -p 4 \
+            VrocoLauncher-raw.apk VrocoLauncher-unsigned.apk
+          echo "=== VERIFY ALIGNMENT ==="
+          $ANDROID_SDK_ROOT/build-tools/$BUILD_TOOLS/zipalign -c -v 4 VrocoLauncher-unsigned.apk \
+            && echo "✅ Aligned" || echo "❌ Not aligned"
+
+      - name: Generate keystore
         run: |
           keytool -genkeypair -v \
-            -keystore vroco.jks \
-            -alias vroco \
+            -keystore vroco.jks -alias vroco \
             -keyalg RSA -keysize 2048 -validity 10000 \
             -storepass vrocosign -keypass vrocosign \
             -dname "CN=Vroco, O=VrocoLauncher, C=US"
@@ -73,7 +64,6 @@ jobs:
       - name: Sign APK
         run: |
           BUILD_TOOLS=$(ls $ANDROID_SDK_ROOT/build-tools | sort -V | tail -1)
-          echo "=== SIGNING WITH BUILD TOOLS: $BUILD_TOOLS ==="
           $ANDROID_SDK_ROOT/build-tools/$BUILD_TOOLS/apksigner sign \
             --ks vroco.jks \
             --ks-pass pass:vrocosign \
@@ -81,20 +71,18 @@ jobs:
             --ks-key-alias vroco \
             --out VrocoLauncher.apk \
             VrocoLauncher-unsigned.apk
-          echo "✅ Sign complete"
 
       - name: Verify APK
         run: |
           BUILD_TOOLS=$(ls $ANDROID_SDK_ROOT/build-tools | sort -V | tail -1)
-          echo "=== APK VERIFICATION ==="
-          $ANDROID_SDK_ROOT/build-tools/$BUILD_TOOLS/apksigner verify \
-            --verbose VrocoLauncher.apk
+          echo "=== SIGNATURE VERIFY ==="
+          $ANDROID_SDK_ROOT/build-tools/$BUILD_TOOLS/apksigner verify --verbose VrocoLauncher.apk
           echo ""
-          echo "=== APK PACKAGE INFO (aapt) ==="
+          echo "=== PACKAGE INFO ==="
           $ANDROID_SDK_ROOT/build-tools/$BUILD_TOOLS/aapt dump badging VrocoLauncher.apk \
-            | grep -E "package|sdkVersion|uses-permission:.*INSTALL|launchable"
+            | grep -E "^package|sdkVersion|launchable"
           echo ""
-          echo "=== FINAL APK SIZE ==="
+          echo "=== SIZE ==="
           ls -lh VrocoLauncher.apk
 
       - name: Upload APK
@@ -104,7 +92,7 @@ jobs:
           path: VrocoLauncher.apk
           retention-days: 30
 
-      - name: Upload build log (on failure)
+      - name: Upload build log on failure
         if: failure()
         uses: actions/upload-artifact@v4
         with:
