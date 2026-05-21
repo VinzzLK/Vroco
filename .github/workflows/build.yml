@@ -89,6 +89,9 @@ jobs:
             --ks-pass pass:vrocosign \
             --key-pass pass:vrocosign \
             --ks-key-alias vroco \
+            --v1-signing-enabled true \
+            --v2-signing-enabled true \
+            --v3-signing-enabled true \
             --out VrocoLauncher.apk \
             VrocoLauncher-unsigned.apk
 
