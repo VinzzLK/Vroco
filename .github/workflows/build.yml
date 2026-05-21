@@ -27,13 +27,22 @@ jobs:
             -O /usr/local/bin/apktool
           chmod +x /usr/local/bin/apktool
 
+      - name: Remove invalid MCC qualifiers from framework-res
+        run: |
+          echo "=== Removing invalid MCC folders ==="
+          rm -rf framework-res/res/values-mcc9460-mnc9000
+          rm -rf framework-res/res/values-mcc9998-mnc9999
+          echo "Done"
+
       - name: Build and install POCO F3 framework
         run: |
           echo "=== BUILDING FRAMEWORK-RES ==="
           apktool b framework-res/ -o framework-res.apk 2>&1 | tee framework-build.log
-          grep -iE "warn|error|fail|exception" framework-build.log || echo "No errors"
           echo ""
-          echo "=== INSTALLING FRAMEWORK INTO APKTOOL ==="
+          echo "=== FRAMEWORK BUILD ERRORS ==="
+          grep -iE "error|fail|exception" framework-build.log || echo "None"
+          echo ""
+          echo "=== INSTALLING FRAMEWORK ==="
           apktool if framework-res.apk --tag poco_f3 2>&1
           echo "✅ Framework installed"
 
@@ -51,15 +60,14 @@ jobs:
           echo "=== APKTOOL BUILD ==="
           apktool b . -o VrocoLauncher-raw.apk --use-aapt2 -t poco_f3 2>&1 | tee build.log
           echo ""
-          echo "=== WARNINGS/ERRORS ==="
-          grep -iE "warn|error|fail|exception" build.log || echo "None"
+          echo "=== BUILD ERRORS ==="
+          grep -iE "error|fail|exception" build.log || echo "None"
           echo ""
           ls -lh VrocoLauncher-raw.apk
 
       - name: Zipalign
         run: |
           BUILD_TOOLS=$(ls $ANDROID_SDK_ROOT/build-tools | sort -V | tail -1)
-          echo "=== ZIPALIGN (build-tools: $BUILD_TOOLS) ==="
           $ANDROID_SDK_ROOT/build-tools/$BUILD_TOOLS/zipalign -v -p 4 \
             VrocoLauncher-raw.apk VrocoLauncher-unsigned.apk
           $ANDROID_SDK_ROOT/build-tools/$BUILD_TOOLS/zipalign -c -v 4 \
@@ -87,7 +95,7 @@ jobs:
       - name: Verify APK
         run: |
           BUILD_TOOLS=$(ls $ANDROID_SDK_ROOT/build-tools | sort -V | tail -1)
-          echo "=== SIGNATURE VERIFY ==="
+          echo "=== SIGNATURE ==="
           $ANDROID_SDK_ROOT/build-tools/$BUILD_TOOLS/apksigner verify --verbose VrocoLauncher.apk
           echo ""
           echo "=== PACKAGE INFO ==="
