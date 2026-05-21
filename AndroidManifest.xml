@@ -3,14 +3,7 @@
     <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
     <uses-permission android:name="miui.permission.READ_AND_WIRTE_PERMISSION_MANAGER"/>
-    <permission android:description="@string/permdesc_install_shortcut" android:label="@string/permlab_install_shortcut" android:name="com.android.launcher.permission.INSTALL_SHORTCUT" android:protectionLevel="normal"/>
-    <permission android:description="@string/permdesc_uninstall_shortcut" android:label="@string/permlab_uninstall_shortcut" android:name="com.miui.home.launcher.permission.UNINSTALL_SHORTCUT" android:protectionLevel="normal"/>
-    <permission android:description="@string/permdesc_install_widget" android:label="@string/permlab_install_widget" android:name="com.miui.home.launcher.permission.INSTALL_WIDGET" android:protectionLevel="normal"/>
-    <permission android:description="@string/permdesc_uninstall_widget" android:label="@string/permlab_uninstall_widget" android:name="com.miui.home.launcher.permission.UNINSTALL_WIDGET" android:protectionLevel="normal"/>
-    <permission android:description="@string/permdesc_read_settings" android:label="@string/permlab_read_settings" android:name="com.android.launcher.permission.READ_SETTINGS" android:protectionLevel="signature"/>
-    <permission android:description="@string/permdesc_write_settings" android:label="@string/permlab_write_settings" android:name="com.android.launcher.permission.WRITE_SETTINGS" android:protectionLevel="signature"/>
-    <permission android:name="com.miui.home.launcher.permission.LOADING_STATUS" android:protectionLevel="normal"/>
-    <permission android:name="com.miui.home.launcher.permission.REMOVE_WIDGET" android:protectionLevel="signature"/>
+
     <uses-permission android:name="miui.permission.powerkeeper.POWER_DATA"/>
     <uses-permission android:name="miui.permission.powerkeeper.HIDDEN_MODE_PROVIDER"/>
     <uses-permission android:name="android.permission.BIND_WALLPAPER"/>
@@ -107,7 +100,6 @@
     <uses-permission android:name="android.permission.READ_DEVICE_CONFIG"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="com.mi.appfinder.normal.permission.FINDER_ACCESS"/>
-    <permission android:name="com.miui.miwallpaper.permission.BROADCAST" android:protectionLevel="signature"/>
     <uses-permission android:name="com.miui.bugreport.permission.DUMP_CACHED_LOG"/>
     <uses-permission android:name="com.xiaomi.dist.permission.ACCESS_APP_META"/>
     <uses-permission android:name="com.xiaomi.dist.permission.ACCESS_HANDOFF_CONTROL"/>
