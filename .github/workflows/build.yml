@@ -27,11 +27,21 @@ jobs:
             -O /usr/local/bin/apktool
           chmod +x /usr/local/bin/apktool
 
+      - name: Build and install POCO F3 framework
+        run: |
+          echo "=== BUILDING FRAMEWORK-RES ==="
+          apktool b framework-res/ -o framework-res.apk 2>&1 | tee framework-build.log
+          grep -iE "warn|error|fail|exception" framework-build.log || echo "No errors"
+          echo ""
+          echo "=== INSTALLING FRAMEWORK INTO APKTOOL ==="
+          apktool if framework-res.apk --tag poco_f3 2>&1
+          echo "✅ Framework installed"
+
       - name: Validate Manifest
         run: |
           echo "=== PACKAGE NAME ==="
           grep -o 'package="[^"]*"' AndroidManifest.xml | head -1
-          echo "=== SHARED USER ID (must be empty) ==="
+          echo "=== SHARED USER ID (must be absent) ==="
           grep "sharedUserId" AndroidManifest.xml && exit 1 || echo "CLEAN"
           echo "=== EXTRACT NATIVE LIBS ==="
           grep "extractNativeLibs" AndroidManifest.xml
@@ -39,9 +49,12 @@ jobs:
       - name: Build APK
         run: |
           echo "=== APKTOOL BUILD ==="
-          apktool b . -o VrocoLauncher-raw.apk --use-aapt2 2>&1 | tee build.log
+          apktool b . -o VrocoLauncher-raw.apk --use-aapt2 -t poco_f3 2>&1 | tee build.log
+          echo ""
           echo "=== WARNINGS/ERRORS ==="
           grep -iE "warn|error|fail|exception" build.log || echo "None"
+          echo ""
+          ls -lh VrocoLauncher-raw.apk
 
       - name: Zipalign
         run: |
@@ -49,9 +62,8 @@ jobs:
           echo "=== ZIPALIGN (build-tools: $BUILD_TOOLS) ==="
           $ANDROID_SDK_ROOT/build-tools/$BUILD_TOOLS/zipalign -v -p 4 \
             VrocoLauncher-raw.apk VrocoLauncher-unsigned.apk
-          echo "=== VERIFY ALIGNMENT ==="
-          $ANDROID_SDK_ROOT/build-tools/$BUILD_TOOLS/zipalign -c -v 4 VrocoLauncher-unsigned.apk \
-            && echo "✅ Aligned" || echo "❌ Not aligned"
+          $ANDROID_SDK_ROOT/build-tools/$BUILD_TOOLS/zipalign -c -v 4 \
+            VrocoLauncher-unsigned.apk && echo "✅ Aligned" || echo "❌ Not aligned"
 
       - name: Generate keystore
         run: |
@@ -92,10 +104,12 @@ jobs:
           path: VrocoLauncher.apk
           retention-days: 30
 
-      - name: Upload build log on failure
+      - name: Upload logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: build-log-${{ github.run_number }}
-          path: build.log
+          name: build-logs-${{ github.run_number }}
+          path: |
+            build.log
+            framework-build.log
           retention-days: 7

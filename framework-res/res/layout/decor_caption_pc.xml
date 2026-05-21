@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.internal.widget.MiuiPcDecorCaptionView android:orientation="vertical" android:descendantFocusability="beforeDescendants" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.android.internal.widget.MiuiPcLinearLayout android:orientation="horizontal" android:id="@id/caption" android:background="@drawable/pc_decor_caption_title" android:focusable="false" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="@dimen/status_bar_height">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:gravity="left" android:layout_gravity="center|left" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="0.0dip">
+                <ImageView android:layout_gravity="center|left" android:id="@id/decor_pc_default" android:background="@drawable/icon_decor_pc_default" android:layout_width="@dimen/status_bar_height" android:layout_height="@dimen/status_bar_height" android:layout_marginLeft="5.0dip" />
+                <Button android:layout_gravity="center|left" android:id="@id/decor_pc_back" android:background="@drawable/icon_decor_pc_back" android:visibility="gone" android:layout_width="23.0dip" android:layout_height="25.0dip" android:layout_marginLeft="5.0dip" />
+                <TextView android:textSize="15.0dip" android:textColor="#ff363636" android:gravity="center_vertical" android:layout_gravity="center|left" android:id="@id/decor_pc_app_name" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginLeft="10.0dip" android:text="app_name" />
+            </LinearLayout>
+            <LinearLayout android:gravity="right" android:layout_gravity="center|right" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="0.0dip">
+                <ImageView android:layout_gravity="end|center" android:id="@id/decor_pc_full" android:background="@drawable/icon_decor_pc_full_new" android:layout_width="@dimen/status_bar_height" android:layout_height="@dimen/status_bar_height" android:layout_marginLeft="0.0dip" />
+                <ImageView android:layout_gravity="end|center" android:id="@id/decor_pc_min" android:background="@drawable/icon_decor_pc_min" android:layout_width="@dimen/status_bar_height" android:layout_height="@dimen/status_bar_height" android:layout_marginLeft="18.899994dip" />
+                <ImageView android:layout_gravity="end|center" android:id="@id/maximize_window" android:background="@drawable/icon_decor_pc_full" android:layout_width="@dimen/status_bar_height" android:layout_height="@dimen/status_bar_height" android:layout_marginLeft="18.899994dip" />
+                <ImageView android:layout_gravity="end|center" android:id="@id/close_window" android:background="@drawable/icon_decor_pc_close" android:layout_width="@dimen/status_bar_height" android:layout_height="@dimen/status_bar_height" android:layout_marginLeft="18.899994dip" android:layout_marginRight="10.0dip" />
+            </LinearLayout>
+        </RelativeLayout>
+    </com.android.internal.widget.MiuiPcLinearLayout>
+</com.android.internal.widget.MiuiPcDecorCaptionView>
