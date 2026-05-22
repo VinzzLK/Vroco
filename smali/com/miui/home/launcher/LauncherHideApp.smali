@@ -27,14 +27,14 @@
 
     sput-object v0, Lcom/miui/home/launcher/LauncherHideApp;->INSTANCE:Lcom/miui/home/launcher/LauncherHideApp;
 
-    const-string v0, "content://com.miui.home.app.hide"
+    const-string v0, "content://com.vroco.launcher.app.hide"
 
     .line 18
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    const-string v1, "parse(\"content://com.miui.home.app.hide\")"
+    const-string v1, "parse(\"content://com.vroco.launcher.app.hide\")"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

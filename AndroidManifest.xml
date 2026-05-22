@@ -253,9 +253,9 @@
             </intent-filter>
         </receiver>
         <provider android:authorities="@string/provider_settings" android:exported="true" android:name="com.miui.home.launcher.LauncherProvider" android:readPermission="com.android.launcher.permission.READ_SETTINGS" android:writePermission="@string/provider_writePermission"/>
-        <provider android:authorities="com.miui.home.search.styleData" android:exported="true" android:name="com.miui.home.launcher.SearchBarStyleDataProvider" android:readPermission="com.android.launcher.permission.READ_SETTINGS" android:writePermission="@string/provider_writePermission"/>
-        <provider android:authorities="com.miui.home.launcher.status" android:exported="false" android:name="com.miui.home.launcher.AppStatusProvider"/>
-        <provider android:authorities="com.miui.home.app.hide" android:exported="true" android:name="com.miui.home.launcher.HideAppProvider" android:readPermission="com.android.launcher.permission.READ_SETTINGS" android:writePermission="@string/provider_writePermission"/>
+        <provider android:authorities="com.vroco.launcher.search.styleData" android:exported="true" android:name="com.miui.home.launcher.SearchBarStyleDataProvider" android:readPermission="com.android.launcher.permission.READ_SETTINGS" android:writePermission="@string/provider_writePermission"/>
+        <provider android:authorities="com.vroco.launcher.launcher.status" android:exported="false" android:name="com.miui.home.launcher.AppStatusProvider"/>
+        <provider android:authorities="com.vroco.launcher.app.hide" android:exported="true" android:name="com.miui.home.launcher.HideAppProvider" android:readPermission="com.android.launcher.permission.READ_SETTINGS" android:writePermission="@string/provider_writePermission"/>
         <provider android:authorities="@string/provider_file" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider">
             <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/>
         </provider>
@@ -307,7 +307,7 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-        <provider android:authorities="com.miui.home.settings.SettingsSearchProvider" android:exported="true" android:grantUriPermissions="true" android:multiprocess="false" android:name="com.miui.home.settings.SettingsSearchProvider">
+        <provider android:authorities="com.vroco.launcher.settings.SettingsSearchProvider" android:exported="true" android:grantUriPermissions="true" android:multiprocess="false" android:name="com.vroco.launcher.settings.SettingsSearchProvider">
             <intent-filter>
                 <action android:name="miui.intent.action.SETTINGS_SEARCH_PROVIDER"/>
             </intent-filter>
@@ -318,7 +318,7 @@
                 <data android:scheme="package"/>
             </intent-filter>
         </receiver>
-        <provider android:authorities="com.miui.home.launcher.category" android:exported="true" android:name="com.miui.home.launcher.CategoryProvider" android:readPermission="com.android.launcher.permission.READ_SETTINGS" android:writePermission="@string/provider_writePermission"/>
+        <provider android:authorities="com.vroco.launcher.launcher.category" android:exported="true" android:name="com.miui.home.launcher.CategoryProvider" android:readPermission="com.android.launcher.permission.READ_SETTINGS" android:writePermission="@string/provider_writePermission"/>
         <activity android:configChanges="screenSize" android:exported="true" android:label="@string/navigation_type_title" android:launchMode="singleTop" android:name="com.miui.home.recents.settings.NavigationBarTypeActivity" android:screenOrientation="portrait" android:theme="@style/MIUIXPreference">
             <intent-filter>
                 <action android:name="com.miui.home.action.navigation_bar_type_settings"/>
@@ -380,7 +380,7 @@
                 <action android:name="com.xiaomi.action.ELDERLY_MODE"/>
             </intent-filter>
         </receiver>
-        <provider android:authorities="com.miui.home.launcher.bigicon.iconsize" android:exported="true" android:name="com.miui.home.launcher.bigicon.IconSizeProvider"/>
+        <provider android:authorities="com.vroco.launcher.launcher.bigicon.iconsize" android:exported="true" android:name="com.miui.home.launcher.bigicon.IconSizeProvider"/>
         <provider android:authorities="com.vroco.launcher.maml_provider" android:exported="true" android:name="com.miui.maml.MamlProvider" android:permission="miui.permission.USE_INTERNAL_GENERAL_API"/>
         <activity android:exported="true" android:name="com.android.systemui.fsgesture.FsGestureBackDemoActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/fsgesture_demo">
             <intent-filter>

@@ -24,7 +24,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    const-string v0, "content://com.miui.home.launcher.category/category"
+    const-string v0, "content://com.vroco.launcher.launcher.category/category"
 
     .line 37
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;

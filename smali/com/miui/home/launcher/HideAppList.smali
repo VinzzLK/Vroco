@@ -462,7 +462,7 @@
 
     if-eqz p2, :cond_1
 
-    const-string v0, "content://com.miui.home.app.hide/update_miui_hide_app_list"
+    const-string v0, "content://com.vroco.launcher.app.hide/update_miui_hide_app_list"
 
     .line 73
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -586,7 +586,7 @@
 
     if-eqz p2, :cond_0
 
-    const-string v0, "content://com.miui.home.app.hide/update_miui_hide_app_list"
+    const-string v0, "content://com.vroco.launcher.app.hide/update_miui_hide_app_list"
 
     .line 86
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;

@@ -1425,7 +1425,7 @@
 
     move-result-object p0
 
-    const-string v0, "com.miui.home.launcher.category"
+    const-string v0, "com.vroco.launcher.launcher.category"
 
     .line 508
     invoke-virtual {p0, v0}, Landroid/content/ContentResolver;->acquireContentProviderClient(Ljava/lang/String;)Landroid/content/ContentProviderClient;

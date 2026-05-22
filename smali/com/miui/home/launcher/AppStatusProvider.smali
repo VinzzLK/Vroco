@@ -36,7 +36,7 @@
 
     sput-object v0, Lcom/miui/home/launcher/AppStatusProvider;->sUriMatcher:Landroid/content/UriMatcher;
 
-    const-string v1, "content://com.miui.home.launcher.status/table_app_state"
+    const-string v1, "content://com.vroco.launcher.launcher.status/table_app_state"
 
     .line 30
     invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -45,7 +45,7 @@
 
     sput-object v1, Lcom/miui/home/launcher/AppStatusProvider;->TABLE_APP_STATE_URI:Landroid/net/Uri;
 
-    const-string v1, "com.miui.home.launcher.status"
+    const-string v1, "com.vroco.launcher.launcher.status"
 
     const-string/jumbo v2, "table_app_state"
 

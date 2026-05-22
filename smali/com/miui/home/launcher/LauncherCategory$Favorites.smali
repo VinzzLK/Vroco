@@ -22,7 +22,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    const-string v0, "content://com.miui.home.launcher.category/favorites"
+    const-string v0, "content://com.vroco.launcher.launcher.category/favorites"
 
     .line 210
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
